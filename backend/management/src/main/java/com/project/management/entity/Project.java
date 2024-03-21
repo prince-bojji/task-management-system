@@ -40,5 +40,6 @@ public class Project {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+
     private  User assignedUser;
 }
