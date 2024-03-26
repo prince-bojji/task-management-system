@@ -1,12 +1,45 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useUser } from '../../components/UserContext';
 
 function Home() {
-  const [projectCount, setProjectCount] = useState(5);
-  const [completedCount, setCompletedCount] = useState(3);
-  const [ongoingCount, setOngoingCount] = useState(2);
+  const [projects, setProjects] = useState([]);
+  const { userInfo } = useUser();
+  const { userId } = userInfo;
+
+  const [projectCount, setProjectCount] = useState(0);
+  const [completedCount, setCompletedCount] = useState(0);
+  const [ongoingCount, setOngoingCount] = useState(0);
+
+  useEffect(() => {
+    loadProjects();
+  }, []);
+
+  const loadProjects = async () => {
+    try {
+      const result = await axios.get('http://localhost:8080/api/projects');
+      const filteredProjects = result.data.filter(
+        project => project.assignedUser.userId === userId
+      );
+      const totalProjects = filteredProjects.length;
+      const completedProjects = filteredProjects.filter(
+        project => project.projectStatus === 'Completed'
+      ).length;
+      const ongoingProjects = filteredProjects.filter(
+        project => project.projectStatus === 'Ongoing'
+      ).length;
+
+      setProjectCount(totalProjects);
+      setCompletedCount(completedProjects);
+      setOngoingCount(ongoingProjects);
+      setProjects(filteredProjects);
+    } catch (error) {
+      console.error('Error loading projects:', error);
+    }
+  };
 
   const calculatePercentage = (completed, total) => {
-    return (completed / total) * 100;
+    return total !== 0 ? (completed / total) * 100 : 0;
   };
 
   return (

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useUser } from '../../components/UserContext';
+import { Link } from 'react-router-dom';
 
 function Project() {
   const [projects, setProjects] = useState([]);
@@ -72,9 +73,13 @@ function Project() {
                     {project.projectStatus}
                   </td>
                   <td className='px-6 py-4'>
-                    <button className='w-full bg-green-500 flex justify-center text-white font-semibold py-1 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600'>
-                      Update
-                    </button>
+                    <div className='flex flex-col'>
+                      <Link
+                        className='w-full mt-2 flex justify-center bg-green-500 text-white font-semibold py-1 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600'
+                        to={`/viewProject/${project.projectId}`}>
+                        View
+                      </Link>
+                    </div>
                   </td>
                 </tr>
               ))}

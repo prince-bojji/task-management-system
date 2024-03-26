@@ -12,8 +12,7 @@ function Landing() {
           <Link
             type='submit'
             className='w-full flex justify-center bg-blue-500 font-semibold text-white py-5 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600'
-            to={`/userSignup`}
-            >
+            to={`/userSignup`}>
             User
           </Link>
         </div>
