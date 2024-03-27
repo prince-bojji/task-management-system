@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../components/UserContext';
@@ -31,6 +31,15 @@ function UpdateUser() {
       console.error('Error:', error);
       alert('Error updating user! Please check your inputs and try again.');
     }
+  };
+
+  useEffect(() => {
+    loadUser();
+  }, []);
+
+  const loadUser = async () => {
+    const result = await axios.get(`http://localhost:8080/api/users/${userId}`);
+    setUser(result.data);
   };
 
   return (

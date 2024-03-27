@@ -19,7 +19,8 @@ function Home() {
     try {
       const result = await axios.get('http://localhost:8080/api/projects');
       const filteredProjects = result.data.filter(
-        project => project.assignedUser.userId === userId
+        project =>
+          project.assignedUser && project.assignedUser.userId === userId
       );
       const totalProjects = filteredProjects.length;
       const completedProjects = filteredProjects.filter(
@@ -44,8 +45,8 @@ function Home() {
 
   return (
     <div className='flex justify-center items-center min-h-screen bg-gray-100 font-montserrat'>
-      <div className='w-full max-w-md bg-white p-8 rounded-md shadow-md'>
-        <div className='text-2xl flex justify-center font-semibold mb-6'>
+      <div className='w-full max-w-xl bg-white p-8 rounded-md shadow-md'>
+        <div className='text-2xl font-bold mb-6 text-center text-[#5d7468]'>
           Project Status
         </div>
 

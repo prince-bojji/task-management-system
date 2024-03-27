@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 
-function UpdateStatus() {
+function ViewProject() {
   const { projectId } = useParams();
   const [project, setProject] = useState([]);
 
@@ -89,4 +89,4 @@ function UpdateStatus() {
   );
 }
 
-export default UpdateStatus;
+export default ViewProject;

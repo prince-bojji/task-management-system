@@ -17,11 +17,12 @@ function Landing() {
           </Link>
         </div>
         <div className='flex justify-center'>
-          <button
+          <Link
             type='button'
-            className='w-full bg-green-500 text-white font-semibold py-5 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600'>
+            className='w-full flex justify-center bg-green-500 text-white font-semibold py-5 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600'
+            to={'/adminLogin'}>
             Admin
-          </button>
+          </Link>
         </div>
       </div>
     </div>
