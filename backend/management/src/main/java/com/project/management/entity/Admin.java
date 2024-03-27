@@ -10,7 +10,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "admin")
 public class Admin {
@@ -26,6 +30,6 @@ public class Admin {
     @Column(name = "admin_username", nullable = false, unique = true)
     private String adminUsername;
 
-    @Column(name="admin_password", nullable = false)
+    @Column(name="admin_password")
     private String adminPassword;
 }
