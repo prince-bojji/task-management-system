@@ -10,6 +10,16 @@ import Profile from './pages/users/Profile';
 import { UserProvider } from './components/UserContext';
 import ViewProject from './pages/users/ViewProject';
 import UpdateUser from './pages/users/UpdateUser';
+import AdminLogin from './pages/admin/AdminLogin';
+import AdminLayout from './components/AdminLayout';
+import HomeAdmin from './pages/admin/HomeAdmin';
+import ManageProject from './pages/admin/ManageProject';
+import User from './pages/admin/User';
+import ViewProjectAdmin from './pages/admin/ViewProject';
+import ViewUser from './pages/admin/ViewUser';
+import AddNewProject from './pages/admin/AddNewProject';
+import EditProject from './pages/admin/EditProject';
+import AssignProject from './pages/admin/AssignProject';
 
 export default function App() {
   return (
@@ -25,9 +35,21 @@ export default function App() {
                 <Route exact path='/updateUser' element={<UpdateUser />} />
                 <Route exact path='/profile' element={<Profile />} />
               </Route>
-              {/* Do the same for admin */}
+
+              <Route element={<AdminLayout />}>
+                <Route exact path='/homeAdmin' element={<HomeAdmin />} />
+                <Route exact path='/manageProject' element={<ManageProject />} />
+                <Route exact path='/viewProjectAdmin/:projectId' element={<ViewProjectAdmin />} />
+                <Route exact path='/addNewProject' element={<AddNewProject />} />
+                <Route exact path='/editProject/:projectId' element={<EditProject />} />
+                <Route exact path='/assignProject/:projectId' element={<AssignProject />} />
+                <Route exact path='/user' element={<User />} />
+                <Route exact path='/viewUser/:userId' element={<ViewUser />} />
+              </Route>
+
               <Route exact path='/userSignup' element={<Signup />} />
               <Route exact path='/userLogin' element={<Login />} />
+              <Route exact path='/adminLogin' element={<AdminLogin />} />
               <Route exact path='/' element={<Landing />} />
             </Routes>
           </div>
