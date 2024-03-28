@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useUser } from '../../components/UserContext';
 
+/**
+ * Component for displaying user's home page.
+ *
+ * @returns JSX element representing the home page.
+ */
 function Home() {
   const [projects, setProjects] = useState([]);
   const { userInfo } = useUser();
@@ -11,10 +16,16 @@ function Home() {
   const [completedCount, setCompletedCount] = useState(0);
   const [ongoingCount, setOngoingCount] = useState(0);
 
+  /**
+   * Loads user's projects from the backend.
+   */
   useEffect(() => {
     loadProjects();
   }, []);
 
+  /**
+   * Loads user's projects from the backend and calculates project statistics.
+   */
   const loadProjects = async () => {
     try {
       const result = await axios.get('http://localhost:8080/api/projects');
@@ -39,6 +50,13 @@ function Home() {
     }
   };
 
+  /**
+   * Calculates the percentage of completed projects.
+   *
+   * @param {number} completed - Number of completed projects.
+   * @param {number} total - Total number of projects.
+   * @returns {number} Percentage of completed projects.
+   */
   const calculatePercentage = (completed, total) => {
     return total !== 0 ? (completed / total) * 100 : 0;
   };

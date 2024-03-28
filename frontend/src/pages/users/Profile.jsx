@@ -3,15 +3,26 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useUser } from '../../components/UserContext';
 
+/**
+ * Component for displaying user profile information and allowing updates.
+ *
+ * @returns JSX element representing the user profile page.
+ */
 function Profile() {
   const [user, setUser] = useState([]);
   const { userInfo } = useUser();
   const { userId } = userInfo;
 
+  /**
+   * Fetches user information from the backend.
+   */
   useEffect(() => {
     getUser();
   }, []);
 
+  /**
+   * Fetches user information from the backend.
+   */
   const getUser = async () => {
     try {
       const result = await axios.get(
@@ -79,9 +90,9 @@ function Profile() {
         )}
         <div className='flex justify-center'>
           <Link
-            className='w-1/3 mt-2 flex justify-center text-center bg-green-500 text-white font-semibold py-1 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600'
+            className='w-1/5 mt-2 mr-4 flex justify-center text-center bg-blue-500 text-white font-semibold py-1 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600'
             to='/updateUser'>
-            Update User Info
+            Update
           </Link>
         </div>
       </div>

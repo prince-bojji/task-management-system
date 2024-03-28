@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import { FiUser, FiPhone, FiMail, FiLock } from 'react-icons/fi';
 
+/**
+ * Component for user registration.
+ *
+ * @returns JSX element representing the signup form.
+ */
 function Signup() {
   const [user, setUser] = useState({
     userName: '',
@@ -11,13 +17,20 @@ function Signup() {
   });
 
   const { userName, userContact, userEmail, userPassword } = user;
-
   const navigate = useNavigate();
 
+  /**
+   * Handles input change events.
+   * @param {object} e - The event object.
+   */
   const onInputChange = e => {
     setUser({ ...user, [e.target.name]: e.target.value });
   };
 
+  /**
+   * Handles form submission.
+   * @param {object} e - The event object.
+   */
   const onSubmit = async e => {
     e.preventDefault();
     try {
@@ -43,7 +56,8 @@ function Signup() {
           Registration Form
         </h2>
         <form onSubmit={onSubmit}>
-          <div className='mb-4'>
+          <div className='mb-4 flex items-center'>
+            <FiUser className='mr-2 text-gray-400' />
             <input
               type='text'
               name='userName'
@@ -54,7 +68,8 @@ function Signup() {
               className='w-full px-3 py-3 border text-black border-gray-300 rounded-md focus:outline-none focus:border-blue-500 bg-white'
             />
           </div>
-          <div className='mb-4'>
+          <div className='mb-4 flex items-center'>
+            <FiPhone className='mr-2 text-gray-400' />
             <input
               type='text'
               name='userContact'
@@ -65,7 +80,8 @@ function Signup() {
               className='w-full px-3 py-3 border text-black border-gray-300 rounded-md focus:outline-none focus:border-blue-500 bg-white'
             />
           </div>
-          <div className='mb-4'>
+          <div className='mb-4 flex items-center'>
+            <FiMail className='mr-2 text-gray-400' />
             <input
               type='email'
               name='userEmail'
@@ -76,7 +92,8 @@ function Signup() {
               className='w-full px-3 py-3 border text-black border-gray-300 rounded-md focus:outline-none focus:border-blue-500 bg-white'
             />
           </div>
-          <div className='mb-4'>
+          <div className='mb-4 flex items-center'>
+            <FiLock className='mr-2 text-gray-400' />
             <input
               type='password'
               name='userPassword'

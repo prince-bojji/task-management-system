@@ -3,6 +3,13 @@ import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
 import { useUser } from './UserContext';
 
+/**
+ * Component representing a menu item in the header.
+ *
+ * @param {Object} props - The props for the MenuItem component.
+ * @param {string} props.link - The link to navigate to.
+ * @returns {JSX.Element} - JSX element representing a menu item.
+ */
 const MenuItem = props => {
   const { pathname } = useLocation();
   const isProjectActive = pathname.includes('/viewProject');
@@ -31,12 +38,22 @@ const MenuItem = props => {
   );
 };
 
+/**
+ * Component representing a menu line in the header.
+ *
+ * @returns {JSX.Element} - JSX element representing a menu line.
+ */
 const MenuLine = () => {
   return (
     <div className='w-full h-[3px] bg-[#5d7468] rounded-full transition-all duration-300'></div>
   );
 };
 
+/**
+ * Component representing the header of the application.
+ *
+ * @returns {JSX.Element} - JSX element representing the header.
+ */
 const Header = () => {
   const [isOpen, setOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(window.scrollY);
@@ -53,7 +70,7 @@ const Header = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [handleScroll]);
+  }, []);
 
   return (
     <header

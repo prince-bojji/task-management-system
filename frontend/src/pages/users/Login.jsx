@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import { FiMail, FiLock } from 'react-icons/fi';
 import { useUser } from '../../components/UserContext';
 
+/**
+ * Component for user login.
+ *
+ * @returns JSX element representing the login form.
+ */
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const { loginUser } = useUser();
 
+  /**
+   * Handles login form submission.
+   * @param {object} event - The event object.
+   */
   async function login(event) {
     event.preventDefault();
     try {
@@ -37,7 +47,8 @@ function Login() {
     <div className='flex justify-center items-center min-h-screen bg-gray-100 font-montserrat'>
       <div className='w-full max-w-md bg-white p-8 rounded-md shadow-md'>
         <form onSubmit={login}>
-          <div className='mb-4'>
+          <div className='mb-4 flex items-center'>
+            <FiMail className='mr-2 text-gray-400' />
             <input
               type='email'
               name='userEmail'
@@ -48,7 +59,8 @@ function Login() {
               className='w-full px-3 py-3 border text-black border-gray-300 rounded-md focus:outline-none focus:border-blue-500 bg-white'
             />
           </div>
-          <div className='mb-4'>
+          <div className='mb-4 flex items-center'>
+            <FiLock className='mr-2 text-gray-400' />
             <input
               type='password'
               name='userPassword'
