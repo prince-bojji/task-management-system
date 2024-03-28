@@ -25,50 +25,68 @@ Before you begin, ensure you have installed the latest version of:
 
 ![Administrator Login](./readme/adminLogin.png)
 
-- **_Homepage_** - Total tasks and its status.
+- **_Homepage_** - Displays total tasks and their status.
 
 ![Admin Homepage](./readme/adminHomepage.png)
 
-- ___Task Management___ - for managing tasks.
+- **_Task Management_** - for managing tasks.
 
 ![Task Management](./readme/taskManagement.png)
 
-- ___a. Add New Task___ 
+- **_a. Add New Task_**
 
 ![Add New Task](./readme/addTask.png)
 
-- ___b. Task Details___ 
+- **_b. Task Details_**
 
 ![Task Details](./readme/taskDetails.png)
 
-- ___c. Assign Task___ 
+- **_c. Assign Task_**
 
 ![Assign Task](./readme/assignTask.png)
 
-- ___d. Edit Task___ 
+- **_d. Edit Task_**
 
 ![Edit Task](./readme/editTask.png)
 
-- ___e. Delete Task___ 
+- **_e. Delete Task_**
 
 ![Delete Task](./readme/taskDeleted.png)
 
-- ___View Users___ - for assigning tasks and managing users.
+- **_View Users_** - Allows for assigning tasks and managing users.
 
 ![View Users](./readme/viewUsers.png)
 
-- ___a. Delete and View User Details___
+- **_a. Delete and View User Details_**
 
 ![View and Delete Users](./readme/viewDeleteUsers.png)
 
-
 ### Users
 
-- Signup / Login
-- Time logs
-- Dashboard
-- View user details
-- Update user details
-- Delete user
-- View project
-- Update project status
+- **_Signup_** - for adding new users.
+
+![Add Users](./readme/signup.png)
+
+- **_Login_** - for users to login into the system.
+
+![User Login](./readme/userLogin.png)
+
+- **_User Homepage_** - Displays total tasks assigned to user and their status.
+
+![User Homepage](./readme/userHomepage.png)
+
+- **_View Task_** - view tasks assigned to the users.
+
+![View Task](./readme/viewTask.png)
+
+- **_Update Task Status_**
+
+![View Task](./readme/updateStatus.png)
+
+- **_View User Information_**
+
+![View User Information](./readme/viewUser.png)
+
+- **_Update User Information_**
+
+![View User Information](./readme/updateUserInfo.png)
