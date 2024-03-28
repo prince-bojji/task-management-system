@@ -42,7 +42,7 @@ function UpdateProjectStatus() {
         `http://localhost:8080/api/projects/${projectId}`,
         project
       );
-      alert('Project updated successfully!');
+      alert('Task status updated successfully!');
       navigate(`/project`);
     } catch (error) {
       console.error('Error updating project:', error);

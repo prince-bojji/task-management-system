@@ -37,11 +37,11 @@ function ManageProject() {
           <Link
             className='w-1/4 mb-3 text-center bg-blue-500 font-semibold text-white py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600'
             to={'/addNewProject'}>
-            Add new project
+            Add new task
           </Link>
         </div>
         <h1 className='text-2xl font-bold mb-6 text-center text-[#5d7468]'>
-          Projects
+          Tasks
         </h1>
         <div className='overflow-x-auto'>
           <table className='min-w-full'>

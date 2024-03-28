@@ -43,7 +43,7 @@ function ViewProject() {
   const deleteProject = async () => {
     try {
       await axios.delete(`http://localhost:8080/api/projects/${projectId}`);
-      alert('Project deleted!');
+      alert('Task deleted!');
       navigate('/manageProject');
     } catch (error) {
       console.error('Error deleting the project:', error);
@@ -54,7 +54,7 @@ function ViewProject() {
     <div className='flex justify-center items-center min-h-screen bg-gray-100 font-montserrat'>
       <div className='w-full max-w-4xl bg-white p-8 rounded-md shadow-md'>
         <h1 className='text-2xl font-bold mb-6 text-center text-[#5d7468]'>
-          Project Details
+          Task Details
         </h1>
         {project ? (
           <div className='overflow-x-auto'>
@@ -120,7 +120,7 @@ function ViewProject() {
           <button
             onClick={handleAssignProjectClick}
             className='w-1/5 mt-2 mr-4 flex justify-center text-center bg-green-500 text-white font-semibold py-1 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600'>
-            Assign project
+            Assign task
           </button>
           <Link
             className='w-1/5 mt-2 mr-4 flex justify-center text-center bg-blue-500 text-white font-semibold py-1 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600'

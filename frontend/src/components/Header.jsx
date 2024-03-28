@@ -83,7 +83,7 @@ const Header = () => {
             src={logo}
             alt='Logo'
           />
-          <h1 className='text-md'>Project Management System</h1>
+          <h1 className='text-md'>Task Management System</h1>
         </Link>
         <div
           className={`lg:hidden w-6 flex flex-col gap-1 justify-center cursor-pointer text-4xl text-[#5d7468]
@@ -100,7 +100,7 @@ const Header = () => {
           className={`flex flex-col lg:flex-row lg:gap-8 lg:w-fit m-0 w-full text-center list-none overflow-hidden transition-all duration-300 ease-in-out 
                 ${isOpen ? 'h-max pt-3 lg:pt-0' : 'h-0 lg:h-fit'}`}>
           <MenuItem link='/home'>Home</MenuItem>
-          <MenuItem link='/project'>Project</MenuItem>
+          <MenuItem link='/project'>Task</MenuItem>
           <MenuItem link='/profile'>
             <div className='flex justify-center items-center gap-1 text-blue-800'>
               {userEmail}

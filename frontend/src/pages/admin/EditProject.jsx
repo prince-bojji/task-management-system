@@ -69,7 +69,7 @@ function EditProject() {
     <div className='flex justify-center items-center min-h-screen bg-gray-100 font-montserrat'>
       <div className='w-full max-w-md bg-white p-8 rounded-md shadow-md'>
         <h2 className='text-2xl font-bold mb-6 text-center text-[#5d7468]'>
-          Edit Project
+          Edit Task
         </h2>
         <form onSubmit={onSubmit}>
           <div className='mb-4'>

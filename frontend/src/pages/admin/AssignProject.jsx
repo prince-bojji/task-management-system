@@ -61,7 +61,7 @@ function AssignProject() {
     <div className='flex justify-center items-center min-h-screen bg-gray-100 font-montserrat'>
       <div className='w-full mt-4 mb-4 max-w-4xl bg-white p-8 rounded-md shadow-md'>
         <h1 className='text-2xl font-bold mb-6 text-center text-[#5d7468]'>
-          Project Details
+          Task Details
         </h1>
         {project ? (
           <div className='overflow-x-auto'>

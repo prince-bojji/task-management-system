@@ -65,12 +65,12 @@ function Home() {
     <div className='flex justify-center items-center min-h-screen bg-gray-100 font-montserrat'>
       <div className='w-full max-w-xl bg-white p-8 rounded-md shadow-md'>
         <div className='text-2xl font-bold mb-6 text-center text-[#5d7468]'>
-          Project Status
+          Tasks Status
         </div>
 
         <div className='mb-6'>
           <div className='flex justify-between items-center'>
-            <div className='text-lg'>Total Projects:</div>
+            <div className='text-lg'>Total Tasks:</div>
             <div className='text-xl font-bold'>{projectCount}</div>
           </div>
         </div>

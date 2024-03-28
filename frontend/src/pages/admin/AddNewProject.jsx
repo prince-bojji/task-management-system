@@ -57,7 +57,7 @@ function AddNewProject() {
     <div className='flex justify-center items-center min-h-screen bg-gray-100 font-montserrat'>
       <div className='w-full max-w-md bg-white p-8 rounded-md shadow-md'>
         <h2 className='text-2xl font-bold mb-6 text-center text-[#5d7468]'>
-          Add new project
+          Add new task
         </h2>
         <form onSubmit={onSubmit}>
           <div className='mb-4'>
@@ -65,7 +65,7 @@ function AddNewProject() {
               type='text'
               name='projectName'
               value={projectName}
-              placeholder='Project Name'
+              placeholder='Task Name'
               required
               onChange={onInputChange}
               className='w-full px-3 py-3 border text-black border-gray-300 rounded-md focus:outline-none focus:border-blue-500 bg-white'
