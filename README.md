@@ -1,6 +1,8 @@
 # Project Management System
 
-This is a web application intended for managing projects, designed for project manager and project members.
+It is a one-week project development after learning `Spring Framework`, `Spring Boot`, `Spring Data JPA`, and `Hibernate`.
+
+___Project Management System___ is a web application for managing tasks. 
 
 ## Getting Started
 
@@ -17,6 +19,18 @@ Before you begin, ensure you have installed the latest version of:
 
 ## Features
 
+### Admin
+
+- ___Administrator Login___ - for managing tasks and users.
+
+![Administrator Login](./readme/adminLogin.png)
+
+- Dashboard
+- Add project and collaborators
+- View user and project
+- Update project details
+- Delete user and project
+
 ### Users
 
 - Signup / Login 
@@ -28,11 +42,4 @@ Before you begin, ensure you have installed the latest version of:
 - View project
 - Update project status
 
-### Admin
 
-- Login
-- Dashboard
-- Add project and collaborators
-- View user and project
-- Update project details
-- Delete user and project
