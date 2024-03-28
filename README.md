@@ -1,8 +1,8 @@
-# Project Management System
+# Task Management System
 
 It is a one-week project development after learning `Spring Framework`, `Spring Boot`, `Spring Data JPA`, and `Hibernate`.
 
-___Project Management System___ is a web application for managing tasks. 
+**_Task Management System_** is a web application for managing tasks.
 
 ## Getting Started
 
@@ -21,9 +21,17 @@ Before you begin, ensure you have installed the latest version of:
 
 ### Admin
 
-- ___Administrator Login___ - for managing tasks and users.
+- **_Login_** - for administrator to login into the system.
 
 ![Administrator Login](./readme/adminLogin.png)
+
+- **_Homepage_** - Total tasks and its status.
+
+![Admin Homepage](./readme/adminHomepage.png)
+
+- ___Task Management___ - for managing tasks.
+
+![Task Management](./readme/taskManagement.png)
 
 - Dashboard
 - Add project and collaborators
@@ -33,7 +41,7 @@ Before you begin, ensure you have installed the latest version of:
 
 ### Users
 
-- Signup / Login 
+- Signup / Login
 - Time logs
 - Dashboard
 - View user details
@@ -41,5 +49,3 @@ Before you begin, ensure you have installed the latest version of:
 - Delete user
 - View project
 - Update project status
-
-
