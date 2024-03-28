@@ -1,3 +1,7 @@
+/**
+ * Controller for managing admin-related HTTP requests.
+ */
+
 package com.project.management.controller;
 
 import java.util.List;
@@ -35,6 +39,12 @@ public class AdminController {
         return ResponseEntity.ok(admin);
     }
 
+    /**
+     * Adds a admin to the system.
+     *
+     * @param admin The admin object to be added.
+     * @return The added admin object.
+     */
     @PostMapping
     public ResponseEntity<Admin> addAdmin(@RequestBody Admin admin){
         Admin savedAdmin  = adminService.addAdmin(admin);

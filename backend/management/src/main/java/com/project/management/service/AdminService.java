@@ -1,3 +1,7 @@
+/**
+ * Service class for admin-related operations.
+ */
+
 package com.project.management.service;
 
 import java.util.List;
@@ -15,14 +19,20 @@ public class AdminService {
     private AdminRepository adminRepository;
 
     /**
-     * Retrieves all admin from the system.
+     * Retrieve admin from the system.
      *
-     * @return List of all admin.
+     * @return List of admin.
      */
     public List<Admin> findAllAdmin() {
         return adminRepository.findAll();
     }
 
+    /**
+     * Adds a admin to the system.
+     *
+     * @param admin The admin object to be added.
+     * @return The added admin object.
+     */
      public Admin addAdmin(Admin admin) {
         return adminRepository.save(admin);
     }
