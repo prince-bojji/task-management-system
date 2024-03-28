@@ -8,7 +8,7 @@ import Home from './pages/users/Home';
 import Project from './pages/users/Project';
 import Profile from './pages/users/Profile';
 import { UserProvider } from './components/UserContext';
-import ViewProject from './pages/users/ViewProject';
+import UpdateProjectStatus from './pages/users/UpdateProjectStatus';
 import UpdateUser from './pages/users/UpdateUser';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminLayout from './components/AdminLayout';
@@ -21,6 +21,11 @@ import AddNewProject from './pages/admin/AddNewProject';
 import EditProject from './pages/admin/EditProject';
 import AssignProject from './pages/admin/AssignProject';
 
+/**
+ * Main component handling routing and rendering of different pages in the application.
+ *
+ * @returns JSX element representing the main application component.
+ */
 export default function App() {
   return (
     <UserProvider>
@@ -31,7 +36,7 @@ export default function App() {
               <Route element={<UserLayout />}>
                 <Route exact path='/home' element={<Home />} />
                 <Route exact path='/project' element={<Project />} />
-                <Route exact path='/viewProject/:projectId' element={<ViewProject />} />
+                <Route exact path='/viewProject/:projectId' element={<UpdateProjectStatus />} />
                 <Route exact path='/updateUser' element={<UpdateUser />} />
                 <Route exact path='/profile' element={<Profile />} />
               </Route>
