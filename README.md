@@ -59,7 +59,7 @@ Before you begin, ensure you have installed the latest version of:
 
 - ___a. Delete and View User Details___
 
-![View Users](./readme/viewDelete.png)
+![View and Delete Users](./readme/viewDeleteUsers.png)
 
 
 ### Users
