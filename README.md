@@ -33,11 +33,34 @@ Before you begin, ensure you have installed the latest version of:
 
 ![Task Management](./readme/taskManagement.png)
 
-- Dashboard
-- Add project and collaborators
-- View user and project
-- Update project details
-- Delete user and project
+- ___a. Add New Task___ 
+
+![Add New Task](./readme/addTask.png)
+
+- ___b. Task Details___ 
+
+![Task Details](./readme/taskDetails.png)
+
+- ___c. Assign Task___ 
+
+![Assign Task](./readme/assignTask.png)
+
+- ___d. Edit Task___ 
+
+![Edit Task](./readme/editTask.png)
+
+- ___e. Delete Task___ 
+
+![Delete Task](./readme/taskDeleted.png)
+
+- ___View Users___ - for assigning tasks and managing users.
+
+![View Users](./readme/viewUsers.png)
+
+- ___a. Delete and View User Details___
+
+![View Users](./readme/viewDelete.png)
+
 
 ### Users
 
