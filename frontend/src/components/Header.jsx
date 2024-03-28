@@ -5,12 +5,26 @@ import { useUser } from './UserContext';
 
 const MenuItem = props => {
   const { pathname } = useLocation();
+  const isProjectActive = pathname.includes('/viewProject');
+  const isUserActive = pathname.includes('/updateUser');
 
   return (
     <Link to={props.link}>
       <li
-        className={`border-0 px-5 py-2 my-2 rounded-xl transition-all
-          ${pathname === props.link && 'bg-white bg-opacity-80 shadow-md'}`}>
+        className={`border-0 px-5 py-2 my-2 rounded-xl transition-all ${
+          pathname === props.link && 'bg-white bg-opacity-80 shadow-md'
+        }
+        ${
+          props.link === '/project' && isProjectActive
+            ? 'bg-white bg-opacity-80 shadow-md'
+            : ''
+        }
+        ${
+          props.link === '/profile' && isUserActive
+            ? 'bg-white bg-opacity-80 shadow-md'
+            : ''
+        }
+        `}>
         {props.children}
       </li>
     </Link>

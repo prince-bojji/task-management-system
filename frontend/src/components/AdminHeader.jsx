@@ -4,12 +4,29 @@ import logo from '../assets/logo.jpg';
 
 const MenuItem = props => {
   const { pathname } = useLocation();
+  const isUserActive = pathname.includes(`/viewUser`);
+  const isManageProjectActive =
+    pathname.includes(`/addNewProject`) ||
+    pathname.includes(`/viewProjectAdmin`) ||
+    pathname.includes(`/assignProject`);
 
   return (
     <Link to={props.link}>
       <li
-        className={`border-0 px-5 py-2 my-2 rounded-xl transition-all
-          ${pathname === props.link && 'bg-white bg-opacity-80 shadow-md'}`}>
+        className={`border-0 px-5 py-2 my-2 rounded-xl transition-all ${
+          pathname === props.link && 'bg-white bg-opacity-80 shadow-md'
+        }
+        ${
+          props.link === '/manageProject' && isManageProjectActive
+            ? 'bg-white bg-opacity-80 shadow-md'
+            : ''
+        }
+        ${
+          props.link === '/user' && isUserActive
+            ? 'bg-white bg-opacity-80 shadow-md'
+            : ''
+        }
+        `}>
         {props.children}
       </li>
     </Link>
