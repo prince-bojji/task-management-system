@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 
+/**
+ * Component for displaying details of a user.
+ *
+ * @returns JSX element representing the user details.
+ */
 function ViewUser() {
   const { userId } = useParams();
   const [user, setUser] = useState([]);
+  const navigate = useNavigate();
 
+  /**
+   * Function to fetch user details from the server.
+   */
   useEffect(() => {
     getUser();
   }, []);
@@ -18,6 +27,19 @@ function ViewUser() {
       setUser(result.data);
     } catch (error) {
       console.error('Error getting user:', error);
+    }
+  };
+
+  /**
+   * Function to delete a user.
+   */
+  const deleteUser = async () => {
+    try {
+      await axios.delete(`http://localhost:8080/api/users/${userId}`);
+      alert('User deleted!');
+      navigate('/user');
+    } catch (error) {
+      console.error('Error deleting the user:', error);
     }
   };
 
@@ -78,10 +100,15 @@ function ViewUser() {
           <p className='text-lg font-semibold'>Loading user...</p>
         )}
         <div className='flex justify-center'>
+          <button
+            className='w-1/5 mt-2 mr-4 flex justify-center text-center bg-red-500 text-white font-semibold py-1 rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600'
+            onClick={deleteUser}>
+            Delete
+          </button>
           <Link
-            className='w-1/3 mt-2 flex justify-center text-center bg-green-500 text-white font-semibold py-1 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600'
+            className='w-1/5 mt-2 flex justify-center text-center bg-gray-500 text-white font-semibold py-1 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'
             to='/user'>
-            Back to Users
+            Back
           </Link>
         </div>
       </div>

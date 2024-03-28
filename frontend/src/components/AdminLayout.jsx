@@ -2,6 +2,11 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import AdminHeader from './AdminHeader';
 
+/**
+ * Component representing the layout for the admin.
+ *
+ * @returns JSX element representing the admin layout.
+ */
 function AdminLayout() {
   return (
     <div>

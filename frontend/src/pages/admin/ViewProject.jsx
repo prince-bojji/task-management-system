@@ -2,11 +2,19 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 
+/**
+ * Component for viewing project details.
+ *
+ * @returns JSX element representing the project details view.
+ */
 function ViewProject() {
   const { projectId } = useParams();
   const [project, setProject] = useState(null);
   const navigate = useNavigate();
 
+  /**
+   * Function to fetch project details from the server.
+   */
   useEffect(() => {
     getProject();
   }, []);
@@ -22,14 +30,16 @@ function ViewProject() {
     }
   };
 
+  /**
+   * Function to handle the click event for assigning the project.
+   */
   const handleAssignProjectClick = () => {
-    if (project && project.assignedUser) {
-      alert('Project is already assigned.');
-    } else {
-      navigate(`/assignProject/${projectId}`);
-    }
+    navigate(`/assignProject/${projectId}`);
   };
 
+  /**
+   * Function to delete the project.
+   */
   const deleteProject = async () => {
     try {
       await axios.delete(`http://localhost:8080/api/projects/${projectId}`);
@@ -117,11 +127,11 @@ function ViewProject() {
             to={`/editProject/${projectId}`}>
             Edit
           </Link>
-          <Link
+          <button
             className='w-1/5 mt-2 mr-4 flex justify-center text-center bg-red-500 text-white font-semibold py-1 rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600'
             onClick={deleteProject}>
             Delete
-          </Link>
+          </button>
           <Link
             className='w-1/5 mt-2 flex justify-center text-center bg-gray-500 text-white font-semibold py-1 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'
             to='/manageProject'>

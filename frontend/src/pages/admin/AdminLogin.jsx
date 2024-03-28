@@ -1,12 +1,23 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { FiMail, FiLock } from 'react-icons/fi';
 
+/**
+ * Component for administrator login.
+ *
+ * @returns JSX element representing the administrator login form.
+ */
 function AdminLogin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
+  /**
+   * Handles the login form submission.
+   *
+   * @param {Object} event - Event object representing the form submission event.
+   */
   async function login(event) {
     event.preventDefault();
     try {
@@ -38,7 +49,8 @@ function AdminLogin() {
           Administrator
         </h2>
         <form onSubmit={login}>
-          <div className='mb-4'>
+          <div className='mb-4 flex items-center'>
+            <FiMail className='mr-2 text-gray-400' />
             <input
               type='email'
               name='userEmail'
@@ -49,7 +61,8 @@ function AdminLogin() {
               className='w-full px-3 py-3 border text-black border-gray-300 rounded-md focus:outline-none focus:border-blue-500 bg-white'
             />
           </div>
-          <div className='mb-4'>
+          <div className='mb-4 flex items-center'>
+            <FiLock className='mr-2 text-gray-400' />
             <input
               type='password'
               name='userPassword'

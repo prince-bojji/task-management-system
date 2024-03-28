@@ -2,12 +2,20 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 
+/**
+ * Component for assigning a project to a user.
+ *
+ * @returns JSX element representing the project assignment view.
+ */
 function AssignProject() {
   const { projectId } = useParams();
   const [project, setProject] = useState(null);
   const [assignee, setAssignee] = useState('');
   const navigate = useNavigate();
 
+  /**
+   * Function to fetch project details from the server.
+   */
   useEffect(() => {
     getProject();
   }, []);
@@ -23,10 +31,16 @@ function AssignProject() {
     }
   };
 
+  /**
+   * Function to handle change in assignee input field.
+   */
   const handleAssigneeChange = e => {
     setAssignee(e.target.value);
   };
 
+  /**
+   * Function to handle assigning the project to a user.
+   */
   const handleAssignToUser = () => {
     assignUser();
   };
@@ -45,7 +59,7 @@ function AssignProject() {
 
   return (
     <div className='flex justify-center items-center min-h-screen bg-gray-100 font-montserrat'>
-      <div className='w-full max-w-4xl bg-white p-8 rounded-md shadow-md'>
+      <div className='w-full mt-4 mb-4 max-w-4xl bg-white p-8 rounded-md shadow-md'>
         <h1 className='text-2xl font-bold mb-6 text-center text-[#5d7468]'>
           Project Details
         </h1>
@@ -117,7 +131,7 @@ function AssignProject() {
                     />
                     <button
                       onClick={handleAssignToUser}
-                      className='ml-2 px-4 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600'>
+                      className='ml-2 px-4 py-2 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600'>
                       Assign
                     </button>
                   </td>

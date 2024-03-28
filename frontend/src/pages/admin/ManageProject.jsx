@@ -2,13 +2,24 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+/**
+ * Component for managing projects.
+ *
+ * @returns JSX element representing the project management interface.
+ */
 function ManageProject() {
   const [projects, setProjects] = useState([]);
 
+  /**
+   * Function to load projects from the server.
+   */
   useEffect(() => {
     loadProjects();
   }, []);
 
+  /**
+   * Function to fetch projects from the server and update state.
+   */
   const loadProjects = async () => {
     try {
       const result = await axios.get('http://localhost:8080/api/projects');

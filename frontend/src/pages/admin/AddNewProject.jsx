@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
+/**
+ * Component for adding a new project.
+ *
+ * @returns JSX element representing the project addition form.
+ */
 function AddNewProject() {
   const [project, setProject] = useState({
     projectName: '',
@@ -10,15 +15,24 @@ function AddNewProject() {
     projectStatus: '',
   });
 
+  const navigate = useNavigate();
   const { projectName, projectDetails, projectDeadline, projectStatus } =
     project;
 
-  const navigate = useNavigate();
-
+  /**
+   * Function to handle input change events and update state accordingly.
+   *
+   * @param {object} e - The input change event object.
+   */
   const onInputChange = e => {
     setProject({ ...project, [e.target.name]: e.target.value });
   };
 
+  /**
+   * Function to handle form submission and add a new project.
+   *
+   * @param {object} e - The form submission event object.
+   */
   const onSubmit = async e => {
     e.preventDefault();
     try {
@@ -93,9 +107,14 @@ function AddNewProject() {
           <div className='flex justify-center'>
             <button
               type='submit'
-              className='w-1/3 bg-blue-500 font-semibold text-white py-3 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600'>
+              className='w-1/3 mt-2 mr-4 flex justify-center text-center bg-green-500 text-white font-semibold py-1 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600'>
               Save
             </button>
+            <Link
+              className='w-1/3 mt-2 flex justify-center text-center bg-gray-500 text-white font-semibold py-1 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'
+              to='/manageProject'>
+              Back
+            </Link>
           </div>
         </form>
       </div>

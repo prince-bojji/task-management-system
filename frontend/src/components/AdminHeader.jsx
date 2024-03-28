@@ -2,14 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
 
+/**
+ * Component for rendering a menu item with active state based on the current pathname.
+ *
+ * @param {Object} props - Component props.
+ * @param {string} props.link - The link for the menu item.
+ * @returns JSX element representing a menu item.
+ */
 const MenuItem = props => {
   const { pathname } = useLocation();
   const isUserActive = pathname.includes(`/viewUser`);
   const isManageProjectActive =
     pathname.includes(`/addNewProject`) ||
     pathname.includes(`/viewProjectAdmin`) ||
-    pathname.includes(`/assignProject`);
-
+    pathname.includes(`/assignProject`) ||
+    pathname.includes(`/editProject`);
   return (
     <Link to={props.link}>
       <li
@@ -33,16 +40,29 @@ const MenuItem = props => {
   );
 };
 
+/**
+ * Component for rendering a line used in the menu.
+ *
+ * @returns JSX element representing a line in the menu.
+ */
 const MenuLine = () => {
   return (
     <div className='w-full h-[3px] bg-[#5d7468] rounded-full transition-all duration-300'></div>
   );
 };
 
+/**
+ * Component for rendering the admin header.
+ *
+ * @returns JSX element representing the admin header.
+ */
 const AdminHeader = () => {
   const [isOpen, setOpen] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(window.scrollY);
 
+  /**
+   * Function to handle scroll event.
+   */
   const handleScroll = () => {
     setScrollPosition(window.scrollY);
   };
@@ -52,7 +72,7 @@ const AdminHeader = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [handleScroll]);
+  }, []);
 
   return (
     <header

@@ -2,9 +2,17 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+/**
+ * Component for displaying a list of users.
+ *
+ * @returns JSX element representing the list of users.
+ */
 function User() {
   const [users, setUsers] = useState([]);
 
+  /**
+   * Function to load users from the server.
+   */
   useEffect(() => {
     loadUsers();
   }, []);
@@ -58,7 +66,7 @@ function User() {
                   <td className='px-6 py-4'>
                     <div className='flex flex-col'>
                       <Link
-                        className='w-full mt-2 flex justify-center bg-green-500 text-white font-semibold py-1 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600'
+                        className='w-full mt-2 mr-4 flex justify-center text-center bg-blue-500 text-white font-semibold py-1 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600'
                         to={`/viewUser/${user.userId}`}>
                         View
                       </Link>

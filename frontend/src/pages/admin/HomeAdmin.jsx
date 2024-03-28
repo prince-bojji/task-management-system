@@ -1,17 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
+/**
+ * Component for displaying project status in the admin dashboard.
+ *
+ * @returns JSX element representing the project status.
+ */
 function HomeAdmin() {
   const [projects, setProjects] = useState([]);
-
   const [projectCount, setProjectCount] = useState(0);
   const [completedCount, setCompletedCount] = useState(0);
   const [ongoingCount, setOngoingCount] = useState(0);
 
+  /**
+   * Function to load projects from the server.
+   */
   useEffect(() => {
     loadProjects();
   }, []);
 
+  /**
+   * Function to fetch projects from the server and update counts.
+   */
   const loadProjects = async () => {
     try {
       const result = await axios.get('http://localhost:8080/api/projects');
@@ -33,6 +43,13 @@ function HomeAdmin() {
     }
   };
 
+  /**
+   * Function to calculate the percentage of completed or ongoing projects.
+   *
+   * @param {number} completed - Number of completed projects.
+   * @param {number} total - Total number of projects.
+   * @returns {number} Percentage of completed or ongoing projects.
+   */
   const calculatePercentage = (completed, total) => {
     return total !== 0 ? (completed / total) * 100 : 0;
   };
