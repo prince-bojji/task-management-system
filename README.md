@@ -1,6 +1,6 @@
 # Task Management System
 
-It is a one-week project development after learning `Spring Framework`, `Spring Boot`, `Spring Data JPA`, and `Hibernate`.
+It is a one-week project development after learning `Spring Framework`, `Spring Boot`, `Spring MVC`, `Spring Data JPA`, and `Hibernate`.
 
 **_Task Management System_** is a web application for managing tasks.
 
@@ -25,7 +25,7 @@ Before you begin, ensure you have installed the latest version of:
 
 ![Administrator Login](./readme/adminLogin.png)
 
-- **_Homepage_** - Displays total tasks and their status.
+- **_Homepage_** - displays total tasks and their status.
 
 ![Admin Homepage](./readme/adminHomepage.png)
 
@@ -53,7 +53,7 @@ Before you begin, ensure you have installed the latest version of:
 
 ![Delete Task](./readme/taskDeleted.png)
 
-- **_View Users_** - Allows for assigning tasks and managing users.
+- **_View Users_** - for assigning tasks and managing users.
 
 ![View Users](./readme/viewUsers.png)
 
@@ -71,7 +71,7 @@ Before you begin, ensure you have installed the latest version of:
 
 ![User Login](./readme/userLogin.png)
 
-- **_User Homepage_** - Displays total tasks assigned to user and their status.
+- **_User Homepage_** - displays total tasks assigned to user and their status.
 
 ![User Homepage](./readme/userHomepage.png)
 
