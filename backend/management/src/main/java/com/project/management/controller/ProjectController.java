@@ -32,7 +32,7 @@ public class ProjectController {
      * @param project The project object to be added.
      * @return The added project object.
      */
-    @PostMapping("/admin/addProject")
+    @PostMapping("/admin/add-project")
     public ResponseEntity<Project> addProject(@RequestBody Project project){
         Project addProject = projectService.addProject(project);
         return new ResponseEntity<>(addProject, HttpStatus.CREATED);
@@ -45,7 +45,7 @@ public class ProjectController {
      * @param userId The unique identifier of the user to whom the project will be assigned.
      * @return The assigned project object.
      */
-    @PostMapping("/admin/{projectId}/assign/{userId}")
+    @PostMapping("/admin/{projectId}/assign-project/{userId}")
     public ResponseEntity<Project> assignProject(@PathVariable("projectId") long projectId, @PathVariable("userId") long userId){
         Project assignedProject = projectService.assignProject(projectId, userId);
         return ResponseEntity.ok(assignedProject);
@@ -56,7 +56,7 @@ public class ProjectController {
      *
      * @return List of all projects.
      */
-    @GetMapping
+    @GetMapping("/adminuser/projects")
     public ResponseEntity<List<Project>> getAllProjects(){
         List<Project> projects = projectService.findAllProjects();
         return ResponseEntity.ok(projects);
@@ -68,7 +68,7 @@ public class ProjectController {
      * @param id The unique identifier of the project.
      * @return The project object.
      */
-    @GetMapping("{id}")
+    @GetMapping("/adminuser/project/{id}")
     public ResponseEntity<Project> getProjectById(@PathVariable("id") long id) {
         Project project = projectService.findProjectById(id);
         return ResponseEntity.ok(project);
@@ -81,7 +81,7 @@ public class ProjectController {
      * @param updatedProject The updated project object.
      * @return The updated project object.
      */
-    @PutMapping("{id}")
+    @PutMapping("/adminuser/update-project/{id}")
     public ResponseEntity<Project> updateProject(@PathVariable("id") long id, @RequestBody  Project updatedProject) {
         Project project = projectService.updateProject(id, updatedProject);
         return ResponseEntity.ok(project);
@@ -93,7 +93,7 @@ public class ProjectController {
      * @param id The unique identifier of the project from which the collaborator will be removed.
      * @return The project object after removing the collaborator.
      */
-    @PostMapping("{id}/remove")
+    @PostMapping("/admin/{id}/remove-collaborator")
     public ResponseEntity<Project> removeCollaborator(@PathVariable("id") long id){
         Project removeCollaborator = projectService.removeCollaborator(id);
         return ResponseEntity.ok(removeCollaborator);
@@ -105,7 +105,7 @@ public class ProjectController {
      * @param id The unique identifier of the project to be deleted.
      * @return A message indicating the success of the operation.
      */
-    @DeleteMapping("{id}")
+    @DeleteMapping("/admin/delete-project/{id}")
     public ResponseEntity<String> deleteProject(@PathVariable("id") long id){
         projectService.deleteProject(id);
         return ResponseEntity.ok("Project deleted successfully.");
