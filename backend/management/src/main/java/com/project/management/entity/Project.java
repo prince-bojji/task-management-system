@@ -1,7 +1,3 @@
-/**
- * Represents a project entity.
- */
-
 package com.project.management.entity;
 
 import jakarta.persistence.Column;
@@ -14,6 +10,10 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+
+/**
+ * Represents a project entity.
+ */
 
 @Getter
 @Setter

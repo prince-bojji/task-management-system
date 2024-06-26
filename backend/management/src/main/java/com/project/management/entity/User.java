@@ -1,7 +1,3 @@
-/**
- * Represents a user entity.
- */
-
 package com.project.management.entity;
 
 import java.util.Collection;
@@ -18,6 +14,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
+
+/**
+ * Represents a user entity.
+ */
 
 @Data
 @Entity

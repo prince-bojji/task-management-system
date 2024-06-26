@@ -1,7 +1,3 @@
-/**
- * Service class for project-related operations.
- */
-
 package com.project.management.service;
 
 import java.util.List;
@@ -14,6 +10,10 @@ import com.project.management.entity.User;
 import com.project.management.exception.ResourceNotFoundException;
 import com.project.management.repository.ProjectRepository;
 import com.project.management.repository.UserRepository;
+
+/**
+ * Service class for project-related operations.
+ */
 
 @Service
 public class ProjectService {

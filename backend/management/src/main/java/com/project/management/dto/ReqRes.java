@@ -8,11 +8,16 @@ import com.project.management.entity.User;
 
 import lombok.Data;
 
+/**
+ * DTO representing a request/response structure.
+ * It encapsulates various fields related to user operations and responses.
+ */
+
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ReqRes {
-    
+
     private int statusCode;
     private String error;
     private String message;
@@ -24,6 +29,6 @@ public class ReqRes {
     private String email;
     private String password;
     private String role;
-    private User users;
-    private List<User> usersList;
+    private User users; 
+    private List<User> usersList; 
 }
